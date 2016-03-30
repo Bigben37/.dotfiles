@@ -59,8 +59,8 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 augroup configgroup
     autocmd!
     autocmd VimEnter * highlight clear SignColumn
-    autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md
-                    \:call <SID>StripTrailingWhitespaces()
+    " autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md
+    "                \:call <SID>StripTrailingWhitespaces()
     autocmd FileType python setlocal commentstring=#\ %s
     autocmd BufEnter *.zsh-theme setlocal filetype=zsh
     autocmd BufEnter Makefile setlocal noexpandtab
@@ -84,6 +84,10 @@ python3 from powerline.vim import setup as powerline_setup
 python3 powerline_setup()
 python3 del powerline_setup
 set laststatus=2
+" }}}
+
+" YouCompleteMe {{{
+let g:ycm_global_ycm_extra_conf = "~/.dotfiles/vim/ycm_extra_conf.py"
 " }}}
 
 set modelines=1
