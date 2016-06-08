@@ -2,14 +2,7 @@
 export ZSH=/home/benjamin/.oh-my-zsh
 
 # Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
 ZSH_THEME="intheloop_yellow"
-#ZSH_THEME="powerline"
-#POWERLINE_RIGHT_A="exit-status-on-fail"
-#POWERLINE_PATH="short"
-#POWERLINE_DETECT_SSH="true"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -58,7 +51,6 @@ plugins=(git,sudo,autopep8,zsh-256color)
 # User configuration
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/platform-tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/benjamin/local/bin"
-# export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -109,23 +101,15 @@ eval "$(thefuck --alias)"
 #    ls -a
 #}
 
-#linux from scrath
-export LFS=/mnt/lfs
-
 #set vim as default editor
 export VISUAL="vim"
 export EDITOR="vim"
 
 
-#pythia makes
+#pythia make
 
 pmake() {
     PYPATH="/home/benjamin/programs/pythia8219"
     g++ $1.cc $PYPATH/lib/libpythia8.a -o $1 -I$PYPATH/include -O2 -pedantic -W -Wall -Wshadow -Wl,-rpath $PYPATH/lib -ldl -I/usr/include/root -L/usr/lib/root -lCore     -lRIO -lNet -lHist -lGraf -lGraf3d -lGpad -lTree -lRint -lPostscript -lMatrix -lPhysics -lMathCore -lThread -lMultiProc -pthread -lm -ldl -rdynamic -std=c++11
 }
 
-pmakevector () {
-    PYPATH="/home/benjamin/programs/pythia8219"
-    g++ -c $1.cc -I$PYPATH/include -O2 -pedantic -W -Wall -Wshadow -Wl,-rpath $PYPATH/lib -ldl -I/usr/include/root -L/usr/lib/root -lCore -lRIO -lNet -lHist -lGraf -lGraf3d -lGpad -lTree -lRint -lPostscript -lMatrix -lPhysics -lMathCore -lThread -lMultiProc -pthread -lm -ldl -rdynamic -std=c++11
-    g++ -o $1 $PYPATH/lib/libpythia8.a -I$PYPATH/include -O2 -pedantic -W -Wall -Wshadow -Wl,-rpath $PYPATH/lib -ldl -I/usr/include/root -L/usr/lib/root -lCore -lRIO     -lNet -lHist -lGraf -lGraf3d -lGpad -lTree -lRint -lPostscript -lMatrix -lPhysics -lMathCore -lThread -lMultiProc -pthread -lm -ldl -rdynamic -std=c++11 $1.o dict.o
-}
