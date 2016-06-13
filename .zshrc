@@ -110,6 +110,9 @@ export EDITOR="vim"
 
 pmake() {
     PYPATH="/home/benjamin/programs/pythia8219"
-    g++ $1.cc $PYPATH/lib/libpythia8.a -o $1 -I$PYPATH/include -O2 -pedantic -W -Wall -Wshadow -Wl,-rpath $PYPATH/lib -ldl -I/usr/include/root -L/usr/lib/root -lCore     -lRIO -lNet -lHist -lGraf -lGraf3d -lGpad -lTree -lRint -lPostscript -lMatrix -lPhysics -lMathCore -lThread -lMultiProc -pthread -lm -ldl -rdynamic -std=c++11
+    MAKEFLAGS="-std=c++11 -O2 -W -Wall -Wshadow"
+    ROOTLIBS=$(root-config --libs)
+    ROOTINC=$(root-config --incdir)
+    eval g++ $MAKEFLAGS $1.cc $PYPATH/lib/libpythia8.a -o $1 -I$PYPATH/include -I$ROOTINC $ROOTLIBS
 }
 
