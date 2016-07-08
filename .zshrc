@@ -105,6 +105,8 @@ eval "$(thefuck --alias)"
 export VISUAL="vim"
 export EDITOR="vim"
 
+#config make to use all cores
+export MAKEFLAGS=-j8
 
 #pythia make
 
