@@ -286,6 +286,7 @@ exec --no-startup-id compton --config=/home/benjamin/.config/compton.conf -b
 exec --no-startup-id dropbox start
 exec --no-startup-id megasync
 exec --no-startup-id redshift
+exec --no-startup-id /opt/urserver/urserver-start --no-manager --no-notify
 
 #Wallpaper
 exec_always feh --bg-scale /home/benjamin/Wallpaper/wallpaper
