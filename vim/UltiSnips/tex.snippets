@@ -38,7 +38,7 @@ snippet table "Table environment" b
 endsnippet
 
 snippet fig "Figure environment" b
-\begin{figure}[${2:htpb}]
+\begin{figure}[${2:htb}]
     \centering
     \includegraphics[width=${3:0.8}\linewidth]{${4:name.ext}}
     \caption{${4/(\w+)\.\w+/\u$1/}$0}
@@ -94,7 +94,7 @@ endsnippet
 
 snippet ssub "Subsubsection" b
 \subsubsection{${1:subsubsection name}}
-\label{ssub:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+\label{subsub:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
 
 ${0}
 endsnippet
@@ -119,6 +119,39 @@ endsnippet
 
 snippet br "Long parenthesis"
 \left(${1:${VISUAL:contents}}\right)$0
+endsnippet
+
+snippet unit "number with unit" i
+\unit[${1:${VISUAL}}]{$2}$0
+endsnippet
+
+snippet columns "columns for beamer" b
+\begin{columns}
+        \begin{column}{${1:0.4}\textwidth}
+            ${0:${VISUAL}}
+        \end{column}
+        \begin{column}{${2:0.6}\textwidth}
+            
+        \end{column}
+    \end{columns}
+endsnippet
+
+snippet text "text command" i
+\text{${0:${VISUAL}}}
+endsnippet
+
+snippet block "block for beamer" b
+\begin{block}{${1:title}}
+    ${0:${VISUAL}}
+\end{block}
+endsnippet
+
+snippet vec "vector" i
+\vec{${1:${VISUAL}}}$0
+endsnippet
+
+snippet emph "emph" 
+\emph{${1:${VISUAL}}}$0
 endsnippet
 
 # vim:ft=snippets:
