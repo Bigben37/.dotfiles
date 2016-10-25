@@ -50,7 +50,7 @@ plugins=(git,sudo,autopep8,zsh-256color)
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/platform-tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/benjamin/local/bin"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/platform-tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/benjamin/local/bin:$HOME/.config/composer/vendor/bin"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -105,6 +105,9 @@ eval "$(thefuck --alias)"
 export VISUAL="vim"
 export EDITOR="vim"
 
+#set firefox as default browser
+export BROWSER="firefox"
+
 #config make to use all cores
 export MAKEFLAGS=-j8
 
@@ -118,3 +121,7 @@ pmake() {
     eval g++ $MAKEFLAGS $1.cc $PYPATH/lib/libpythia8.a -o $1 -I$PYPATH/include -I$ROOTINC $ROOTLIBS
 }
 
+#homestad
+function homestead() {
+    ( cd ~/Homestead && vagrant $*  )
+}
