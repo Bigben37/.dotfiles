@@ -91,7 +91,9 @@ alias pupdate='sudo pacman -Syu'
 alias gl='git log --oneline --graph --decorate --all'
 alias zshconfig='vim ~/.zshrc'
 alias root='root -l'
-
+alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
+alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F -h'
+alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F -h'
 #thefuck
 eval "$(thefuck --alias)"
 
