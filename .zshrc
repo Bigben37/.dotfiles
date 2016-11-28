@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/benjamin/.oh-my-zsh
+export ZSH=/home/br65/.oh-my-zsh
 
 # Set name of the theme to load.
 ZSH_THEME="intheloop_yellow"
@@ -50,7 +50,7 @@ plugins=(git,sudo,autopep8,zsh-256color)
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/platform-tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/benjamin/local/bin:$HOME/.config/composer/vendor/bin"
+#export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/platform-tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/benjamin/local/bin:$HOME/.config/composer/vendor/bin"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -90,10 +90,16 @@ alias ports='netstat -tulanp'
 alias pupdate='sudo pacman -Syu'
 alias gl='git log --oneline --graph --decorate --all'
 alias zshconfig='vim ~/.zshrc'
+alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'                        
+alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F -h'                  
+alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F -h'
 alias root='root -l'
+alias squ='squeue -u $USER'
+alias psu='ps -u $USER'
+
 
 #thefuck
-eval "$(thefuck --alias)"
+#eval "$(thefuck --alias)"
 
 #show dir contents after changing to dir
 #function chpwd() {
