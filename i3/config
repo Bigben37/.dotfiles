@@ -221,7 +221,8 @@ for_window [class="Skype"] floating enable border normal
 for_window [class="Thus"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
-for_window [class="ROOT"] floating enable border normal
+for_window [class="TSM*"] floating enable border normal
+# for_window [class="ROOT"] floating enable border normal
 
  # }}}
 

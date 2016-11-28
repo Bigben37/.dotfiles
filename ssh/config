@@ -1,0 +1,80 @@
+# office work station
+Host haco
+    HostName haco81.physik.uni-freiburg.de
+    User     brottle
+
+Host bfg
+    HostName ui.bfg.uni-freiburg.de
+    User     br65
+    IdentityFile ~/.ssh/cern
+    ForwardX11 yes
+    ForwardX11Trusted yes
+
+Host bfg1
+    HostName ui1.bfg.uni-freiburg.de
+    User     br65
+    IdentityFile ~/.ssh/cern
+    ForwardX11 yes
+    ForwardX11Trusted yes
+
+Host bfg2
+    HostName ui2.bfg.uni-freiburg.de
+    User     br65
+    IdentityFile ~/.ssh/cern
+    ForwardX11 yes
+    ForwardX11Trusted yes
+
+Host bfg3
+    HostName ui3.bfg.uni-freiburg.de
+    User     br65
+    IdentityFile ~/.ssh/cern
+    ForwardX11 yes
+    ForwardX11Trusted yes
+
+Host bfg4
+    HostName ui4.bfg.uni-freiburg.de
+    User     br65
+    IdentityFile ~/.ssh/cern
+    ForwardX11 yes
+    ForwardX11Trusted yes
+
+Host bfg5
+    HostName ui5.bfg.uni-freiburg.de
+    User     br65
+    IdentityFile ~/.ssh/cern
+    ForwardX11 yes
+    ForwardX11Trusted yes
+
+Host bfg6
+    HostName ui6.bfg.uni-freiburg.de
+    User     br65
+    IdentityFile ~/.ssh/cern
+    ForwardX11 yes
+    ForwardX11Trusted yes
+
+Host bfg7
+    HostName ui7.bfg.uni-freiburg.de
+    User     br65
+    IdentityFile ~/.ssh/cern
+    ForwardX11 yes
+    ForwardX11Trusted yes
+
+Host bfg8
+    HostName ui8.bfg.uni-freiburg.de
+    User     br65
+    IdentityFile ~/.ssh/cern
+    ForwardX11 yes
+    ForwardX11Trusted yes
+
+Host bfg9
+    HostName ui9.bfg.uni-freiburg.de
+    User     br65
+    IdentityFile ~/.ssh/cern
+    ForwardX11 yes
+    ForwardX11Trusted yes
+
+Host gitlab.cern.ch
+    IdentityFile ~/.ssh/cern
+
+Host github.com
+    IdentityFile ~/.ssh/id_rsa

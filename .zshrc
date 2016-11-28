@@ -97,7 +97,6 @@ alias root='root -l'
 alias squ='squeue -u $USER'
 alias psu='ps -u $USER'
 
-
 #thefuck
 #eval "$(thefuck --alias)"
 

@@ -20,7 +20,7 @@ set number              " show line numbers
 set showcmd             " show command line in bottom bar
 set cursorline          " highlight current line
 if version > 730
-    set colorcolumn=80      " set helper column
+    set colorcolumn=110      " set helper column
 endif
 filetype indent on      " load filetype-specific indent files
 set wildmenu            " visual autocomplete for command menu
@@ -111,6 +111,7 @@ let g:UltiSnipsEditSplit="vertical"
 " }}}
 
 nnoremap <F5> :silent make <CR>
+cmap w!! w !sudo tee > /dev/null %
 
 set modelines=1
 " vim:foldmethod=marker:foldlevel=0
