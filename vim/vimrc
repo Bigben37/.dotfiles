@@ -1,4 +1,40 @@
-set nocompatible " no compatibility for very old vim verions
+set nocompatible                    " no compatibility for very old vim verions
+
+" VimPlug {{{
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'ctrlpvim/ctrlp.vim'           " fuzzy finder
+Plug 'jiangmiao/auto-pairs'         " insert or delete brackets, parens, quotes in pair
+Plug 'scrooloose/nerdtree'          " file browser tree
+Plug 'Xuyuanp/nerdtree-git-plugin'  " nerd tree git support
+Plug 'vim-syntastic/syntastic'      " syntax checking
+Plug 'sirver/UltiSnips'             " snippet engine
+Plug 'bronson/vim-trailing-whitespace'  " show and fix trialing whitespaces
+Plug 'tomtom/tcomment_vim'          " toggle comments
+Plug 'haya14busa/incsearch.vim'     " better search
+
+Plug 'sjl/badwolf'                  " color scheme
+
+" Airline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" git
+Plug 'tpope/vim-fugitive'           " git commands in vim
+Plug 'airblade/vim-gitgutter'       " git changes on side
+
+" YouCompleteMe
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py'}
+
+" webdev
+Plug 'jwalton512/vim-blade'         " blade (laravel)
+Plug 'mattn/emmet-vim'              " emmet
+Plug 'alvan/vim-closetag'           " auto complete close tags
+
+
+call plug#end()                     " required
+" }}}
 
 " Colors {{{
 set t_Co=256            " set 256 colors
@@ -20,7 +56,7 @@ set number              " show line numbers
 set showcmd             " show command line in bottom bar
 set cursorline          " highlight current line
 set colorcolumn=110      " set helper column
-filetype indent on      " load filetype-specific indent files
+filetype plugin indent on
 set wildmenu            " visual autocomplete for command menu
 set lazyredraw          " redraw only when we need to
 set spelllang=en,de
@@ -29,8 +65,18 @@ set spelllang=en,de
 " Searching {{{
 set incsearch               " search as characters are entered
 set hlsearch                " hightlight matches
-" turn off search hightlight with ,<space>
-nnoremap <leader><space> :nohlsearch<CR>
+" incsearch settings
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+let g:incsearch#auto_nohlsearch = 1
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
+
 "}}}
 
 " Folding {{{
@@ -58,7 +104,7 @@ set wildignore+=*.ico,*.ICO,backup/**,*.sql,*.dump,*.tmp,*.min.js,Gemfile.lock
 set wildignore+=*.png,*.PNG,*.JPG,*.jpg,*.JPEG,*.jpeg,*.GIF,*.gif,*.pdf,*.PDF
 set wildignore+=vendor/**,coverage/**,tmp/**,rdoc/**,*.BACKUP.*,*.BASE.*,*.LOCAL.*,*.REMOTE.*,.sass-cache/**
 let g:ctrlp_match_window = 'bottom,order:ttb'   " match from top to bottom
-let g:ctrlp_switch_buffer = 0                   " open files in new buffers 
+let g:ctrlp_switch_buffer = 0                   " open files in new buffers
 let g:ctrlp_working_path_mode = 0               " allowes to change cwd during session
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 "}}}
@@ -86,20 +132,14 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
 " }}}
 
-" Powerline {{{
-let g:powerline_pycmd="py3"
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
+" Airline {{{
 set laststatus=2
-" }}}
-
-" YouCompleteMe {{{
-let g:ycm_global_ycm_extra_conf = "~/.dotfiles/vim/ycm_extra_conf.py"
+let g:airline_powerline_fonts = 1
+let g:airline_theme='badwolf'
 " }}}
 
 " NERDTree {{{
-map <C-n> :NERDTreeToggle<CR> 
+map <C-n> :NERDTreeToggle<CR>
 " }}}
 
 " UltiSnip {{{
@@ -110,6 +150,8 @@ let g:UltiSnipsEditSplit="vertical"
 
 nnoremap <F5> :silent make <CR>
 cmap w!! w !sudo tee > /dev/null %
+
+let g:instant_markdown_slow = 1
 
 set modelines=1
 " vim:foldmethod=marker:foldlevel=0

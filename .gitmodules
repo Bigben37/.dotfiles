@@ -1,9 +1,0 @@
-[submodule "vim/colorschemes/mod8"]
-	path = vim/colorschemes/mod8
-	url = git@github.com:easysid/mod8.vim.git
-[submodule "vim/colorschemes/vim-hybrid"]
-	path = vim/colorschemes/vim-hybrid
-	url = git@github.com:scwood/vim-hybrid.git
-[submodule "vim/colorschemes/badwolf"]
-	path = vim/colorschemes/badwolf
-	url = git@github.com:sjl/badwolf.git
