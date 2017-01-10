@@ -90,11 +90,12 @@ alias ports='netstat -tulanp'
 alias pupdate='sudo pacman -Syu'
 alias gl='git log --oneline --graph --decorate --all'
 alias zshconfig='vim ~/.zshrc'
-alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'                        
+alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F --dereference-command-line-symlink-to-dir'                        
 alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F -h'                  
 alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F -h'
 alias root='root -l'
 alias squ='squeue -u $USER'
+alias squc='squ | grep " R " | wc -l'
 alias psu='ps -u $USER'
 
 #thefuck
