@@ -9,7 +9,9 @@ Plug 'jiangmiao/auto-pairs'         " insert or delete brackets, parens, quotes 
 Plug 'scrooloose/nerdtree'          " file browser tree
 Plug 'Xuyuanp/nerdtree-git-plugin'  " nerd tree git support
 Plug 'vim-syntastic/syntastic'      " syntax checking
-Plug 'sirver/UltiSnips'             " snippet engine
+if version > 740
+    Plug 'sirver/UltiSnips'             " snippet engine
+endif
 Plug 'bronson/vim-trailing-whitespace'  " show and fix trialing whitespaces
 Plug 'tomtom/tcomment_vim'          " toggle comments
 Plug 'haya14busa/incsearch.vim'     " better search
@@ -55,15 +57,10 @@ set autoindent
 set number              " show line numbers
 set showcmd             " show command line in bottom bar
 set cursorline          " highlight current line
-<<<<<<< HEAD
 if version > 730
     set colorcolumn=110      " set helper column
 endif
-filetype indent on      " load filetype-specific indent files
-=======
-set colorcolumn=110      " set helper column
 filetype plugin indent on
->>>>>>> master
 set wildmenu            " visual autocomplete for command menu
 set lazyredraw          " redraw only when we need to
 set spelllang=en,de
