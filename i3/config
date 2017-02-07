@@ -139,7 +139,7 @@ set $workspace3 "3: "
 set $workspace4 "4: "
 set $workspace5 "5: "
 set $workspace6 "6: "
-set $workspace7 "7: "
+set $workspace7 "7: "
 set $workspace8 "8: "
 set $workspace9 "9: "
 set $workspace0 "10: "
@@ -197,6 +197,8 @@ assign [class="Firefox"] $workspace2
 assign [class="Vlc"] $workspace8
 assign [class="Rhythmbox"] $workspace9
 assign [class="Thunderbird"] $workspace0
+assign [class="Mattermost"] $workspace7
+assign [class="VidyoDesktop"] $workspace7
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 2
@@ -222,6 +224,7 @@ for_window [class="Thus"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="TSM*"] floating enable border normal
+for_window [class="VidyoDesktop"] floating enable border normal
 # for_window [class="ROOT"] floating enable border normal
 
  # }}}

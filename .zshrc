@@ -94,6 +94,10 @@ alias root='root -l'
 alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
 alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F -h'
 alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F -h'
+alias htt='ssh bfg4 -t tmux a -t htt'
+alias mva='ssh bfg4 -t tmux a -t mva'
+alias fit='ssh brottler@lxplus033.cern.ch -t tmux a -t fit'
+
 #thefuck
 eval "$(thefuck --alias)"
 

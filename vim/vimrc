@@ -8,7 +8,11 @@ Plug 'ctrlpvim/ctrlp.vim'           " fuzzy finder
 Plug 'jiangmiao/auto-pairs'         " insert or delete brackets, parens, quotes in pair
 Plug 'scrooloose/nerdtree'          " file browser tree
 Plug 'Xuyuanp/nerdtree-git-plugin'  " nerd tree git support
-Plug 'vim-syntastic/syntastic'      " syntax checking
+if v:version >= 800                 " syntax checking
+    Plug 'w0rp/ale'
+else
+    Plug 'vim-syntastic/syntastic'
+endif
 Plug 'sirver/UltiSnips'             " snippet engine
 Plug 'bronson/vim-trailing-whitespace'  " show and fix trialing whitespaces
 Plug 'tomtom/tcomment_vim'          " toggle comments

@@ -1,9 +1,12 @@
 ! fonts
 URxvt.font:  xft:DejaVu Sans Mono:pixelsize=13,\
              xft:DejaVu Sans Mono for Powerline:pixelsize=13
-URxvt.boldFont: xft:DejaVu Sans Mono:pixelsize=13:bold
-URxvt.italicFont: xft:DejaVu Sans Mono:pixelsize=13:italic
-URxvt.boldItalicFont: xft:DejaVu Sans Mono:pixelsize=13:bold:italic
+URxvt.boldFont: xft:DejaVu Sans Mono:pixelsize=13:bold,\
+             xft:DejaVu Sans Mono for Powerline:pixelsize=13:bold
+URxvt.italicFont: xft:DejaVu Sans Mono:pixelsize=13:italic,\
+             xft:DejaVu Sans Mono for Powerline:pixelsize=13:italic
+URxvt.boldItalicFont: xft:DejaVu Sans Mono:pixelsize=13:bold:italic,\
+             xft:DejaVu Sans Mono for Powerline:pixelsize=13:bold:italic
 URxvt.letterSpace: -1
 
 !following settings for fonts, works with Infinality
