@@ -39,10 +39,11 @@ endsnippet
 
 snippet fig "Figure environment" b
 \begin{figure}[${2:htb}]
-    \centering
-    \includegraphics[width=${3:0.8}\linewidth]{${4:name.ext}}
-    \caption{${4/(\w+)\.\w+/\u$1/}$0}
-    \label{fig:${4/(\w+)\.\w+/$1/}}
+    \begin{center}
+		\includegraphics[width=${3:0.8}\linewidth]{${4:name.ext}}
+		\caption{${4/(\w+)\.\w+/\u$1/}$0}
+		\label{fig:${4/(\w+)\.\w+/$1/}}
+	\end{center}
 \end{figure}
 endsnippet
 
@@ -127,13 +128,13 @@ endsnippet
 
 snippet columns "columns for beamer" b
 \begin{columns}
-        \begin{column}{${1:0.4}\textwidth}
-            ${0:${VISUAL}}
-        \end{column}
-        \begin{column}{${2:0.6}\textwidth}
-            
-        \end{column}
-    \end{columns}
+	\begin{column}{${1:0.4}\textwidth}
+		${0:${VISUAL}}
+	\end{column}
+	\begin{column}{${2:0.6}\textwidth}
+		
+	\end{column}
+\end{columns}
 endsnippet
 
 snippet text "text command" i
