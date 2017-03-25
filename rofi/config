@@ -1,0 +1,16 @@
+rofi.modi: drun,run
+rofi.lines: 10
+rofi.padding:                        0
+
+rofi.font: roboto-mono 14
+rofi.hide-scrollbar: true
+rofi.separator-style: none
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-window: #2d303b, #dddd13, #dddd13
+rofi.color-normal: #000000, #f9f9f9, #555555, #dddd13, #040404
+rofi.color-active: argb:fb000000, #0ed839, #555555, #0ed839, #f9f9f9
+rofi.color-urgent: #000000, #e92f2f, #555555, #e92f2f, #f9f9f9
