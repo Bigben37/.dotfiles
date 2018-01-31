@@ -90,8 +90,8 @@ alias ports='netstat -tulanp'
 alias pupdate='sudo pacman -Syu'
 alias gl='git log --oneline --graph --decorate --all'
 alias zshconfig='vim ~/.zshrc'
-alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F --dereference-command-line-symlink-to-dir'                        
-alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F -h'                  
+alias ls='ls --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F --dereference-command-line-symlink-to-dir'
+alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F -h'
 alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F -h'
 alias root='root -l'
 alias squ='squeue -u $USER'
@@ -117,17 +117,36 @@ export BROWSER="firefox"
 #config make to use all cores
 export MAKEFLAGS=-j8
 
-#pythia make
-
-pmake() {
-    PYPATH="/home/benjamin/programs/pythia8219"
-    MAKEFLAGS="-std=c++11 -O2 -W -Wall -Wshadow"
-    ROOTLIBS=$(root-config --libs)
-    ROOTINC=$(root-config --incdir)
-    eval g++ $MAKEFLAGS $1.cc $PYPATH/lib/libpythia8.a -o $1 -I$PYPATH/include -I$ROOTINC $ROOTLIBS
-}
+# fix python path
+export PYTHONPATH=.:$PYTHONPATH
 
 #homestad
 function homestead() {
     ( cd ~/Homestead && vagrant $*  )
 }
+
+function meminfo() {
+    if (( $# < 1 ))
+    then
+        echo "Please provide a job id"
+    elif (( $# > 1 ))
+    then
+        echo "To specify a list of job ids, use following syntax: meminfo jobid1,jobid2,jobid3"
+    else
+        sacct -j $1 -o MaxRSS | sed '/^\s*$/d' | tail -n+3 | sort
+    fi
+}
+
+function setupATLAS() {
+    # define local overrides - better if in a common area for a site
+    export ALRB_localConfigDir=/clustersw/atl/cvmfs/localConfig
+    export ATLAS_LOCAL_ROOT_BASE=/cvmfs/atlas.cern.ch/repo/ATLASLocalRootBase
+    source ${ATLAS_LOCAL_ROOT_BASE}/user/atlasLocalSetup.sh
+}
+
+function sloc() {
+    find . -name "*$1" | xargs wc -l
+}
+
+export TQPATH=/home/br65/Htt2016/CAFCore/QFramework
+export LESS="-R"
